@@ -9,9 +9,8 @@ using namespace std;
 #include <cmath>         
 int main() {
 
-    double circleRadius = 10.0;
-    double circleArea = M_PI * circleRadius * circleRadius;
-    cout << "Welcome to the Shape Calculator!" << endl;
+    double circleRadius = 10.0; //Set the circle radius varible to 10.    
+    double circleArea = M_PI * circleRadius * circleRadius; //Varible caculates the area of the circle using Circle Radius varible.    cout << "Welcome to the Shape Calculator!" << endl;
     cout << "The area of the circle is: " << circleArea << endl;
     return 0;
 }
