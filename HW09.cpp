@@ -1,36 +1,38 @@
-
-// Program Name: HW09
-// Purpose: convert temperatures between Celsius and Fahrenheit.
+// Program Name: Temperature Conversion
+// Purpose: Celsius temperatures to Fahrenheit or Fahrenheit to Celsius temperature
 // Author: Jack McNamara
 // Date Last Modified: June 27, 2025
 
-#include <iostream>  
-#include <iomanip>   
-#include <cctype> 
+#include<iostream>
+#include<iomanip>
 using namespace std;
 
 int main() {
-    char choice;       
-    double temperature; 
-    double convertedTemp; 
- cout << fixed << setprecision(1);
-    cout << "Enter c (or C) to convert Fahrenheit to Celsius ";
-   cout << " or f (or F) to convert Celsius to Fahrenheit: ";
-cin >> choice;
-    choice = toupper(choice);
-    if (choice == 'F') {
-      cout << "Enter the temperature in Celsius: ";
-    cin >> temperature;
-        convertedTemp = (9.0 / 5.0) * temperature + 32.0;
-        cout << temperature << " Celsius is " << convertedTemp << " degrees Fahrenheit." << endl;
-    } else if (choice == 'C') {
-      cout << "Enter the temperature in Fahrenheit: ";
-     cin >> temperature;
-      convertedTemp = (temperature - 32.0) * (5.0 / 9.0);
-    cout << temperature << " Fahrenheit is " << convertedTemp << " degrees Celsius." << endl;
-    } else {
-  cout << "Invalid choice. Please enter 'C' or 'F'." << endl;
+
+    // Set varibles
+    char choice;
+    double tempInput, convertedTemp;
+
+    // Choose coversion type
+    cout<<"Enter c (or C) to convert Fahrenheit to Celsius  or f (or F) to convert ";cin>>choice;
+
+    // Convert to Celsius
+    if (choice=='c' || choice=='C')
+    {
+        cout<< "Enter fahrenheit temperture to convert to celsius: ";cin >> tempInput;
+        convertedTemp = ((tempInput- 32) * 5.0 / 9.02);
+        cout<< "Temperture in celsius: "<<fixed<<setprecision(1)<<convertedTemp<<endl;
     }
+
+    // Convert to Fahrenheit
+    else if(choice=='f' || choice=='F')
+    {
+        cout<< "Enter celsius temperture to convert to fahrenheit: ";cin >> tempInput;
+        convertedTemp = (9.0 / 5.0) * tempInput + 32;
+        cout<< "Temperture in celsius: "<<fixed<<setprecision(1)<<convertedTemp<<endl; 
+    }
+
+    
 
     return 0;
 }
